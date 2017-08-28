@@ -1,0 +1,51 @@
+$primaryColor:#23b7ef;
+$signUpColor:#1ca8dd;
+$headerColor:#23b7ef;
+$descriptionColor:#6d6d6d;
+
+@mixin header {
+	font-size: 	2.2rem;
+	color: $headerColor;
+	margin: 0;
+	padding-bottom: 1.6875rem;
+}
+
+@mixin description {
+	margin: 0;
+	font-size: 1.1rem;
+	color: $descriptionColor;
+	line-height: 26px;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 480px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "medium" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "large" {
+    @media (min-width: 769px) {
+      @content;
+    }
+  }
+
+  @else if $breakpoint == "xlarge" {
+    @media (min-width: 1500px) {
+      @content;
+    }
+  }
+
+
+  @else {
+    @media ($breakpoint) {
+      @content;
+    }
+  }
+}
